@@ -9,7 +9,7 @@ namespace Spryker\Zed\CmsSlotBlock\Business\Reader;
 
 use Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer;
 
-interface CmsSlotBlockRelationsReaderInterface
+interface CmsSlotBlockReaderInterface
 {
     /**
      * @param int $idCmsSlotTemplate
