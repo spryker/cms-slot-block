@@ -12,17 +12,7 @@ use Generated\Shared\Transfer\CmsSlotBlockCriteriaTransfer;
 
 interface CmsSlotBlockRelationsWriterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer $cmsSlotBlockCollectionTransfer
-     *
-     * @return void
-     */
     public function createCmsSlotBlockRelations(CmsSlotBlockCollectionTransfer $cmsSlotBlockCollectionTransfer): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
-     *
-     * @return void
-     */
     public function deleteCmsSlotBlockRelationsByCriteria(CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer): void;
 }

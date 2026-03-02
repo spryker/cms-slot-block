@@ -104,13 +104,6 @@ class CmsSlotBlockBusinessTester extends Actor
         return $cmsSlotTemplateTransfers;
     }
 
-    /**
-     * @param int $idCmsSlotTemplate
-     * @param int $idCmsSlot
-     * @param int $idCmsBlock
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotBlockTransfer
-     */
     public function createCmsSlotBlockInDb(int $idCmsSlotTemplate, int $idCmsSlot, int $idCmsBlock): CmsSlotBlockTransfer
     {
         return $this->haveCmsSlotBlockInDb([
@@ -120,12 +113,6 @@ class CmsSlotBlockBusinessTester extends Actor
         ]);
     }
 
-    /**
-     * @param int $idCmsSlotTemplate
-     * @param int $idCmsSlot
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotBlockCriteriaTransfer
-     */
     public function createCmsSlotBlockCriteriaTransfer(int $idCmsSlotTemplate, int $idCmsSlot): CmsSlotBlockCriteriaTransfer
     {
         return (new CmsSlotBlockCriteriaTransfer())
@@ -133,13 +120,6 @@ class CmsSlotBlockBusinessTester extends Actor
             ->setIdCmsSlot($idCmsSlot);
     }
 
-    /**
-     * @param int $idCmsSlotTemplate
-     * @param int $idCmsSlot
-     * @param int $idCmsBlock
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotBlockTransfer
-     */
     public function createCmsSlotBlockTransfer(int $idCmsSlotTemplate, int $idCmsSlot, int $idCmsBlock): CmsSlotBlockTransfer
     {
         return (new CmsSlotBlockTransfer())->setIdCmsBlock($idCmsBlock)
@@ -163,17 +143,11 @@ class CmsSlotBlockBusinessTester extends Actor
         return $cmsSlotBlockCollectionTransfer;
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlock\Business\CmsSlotBlockFacadeInterface
-     */
     public function createCmsSlotBlockFacade(): CmsSlotBlockFacadeInterface
     {
         return new CmsSlotBlockFacade();
     }
 
-    /**
-     * @return int
-     */
     public function getCmsBlockCount(): int
     {
         return SpyCmsBlockQuery::create()->count();

@@ -28,11 +28,6 @@ use Spryker\Zed\PropelOrm\Business\Runtime\ActiveQuery\Criteria;
  */
 class CmsSlotBlockRepository extends AbstractRepository implements CmsSlotBlockRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer
-     */
     public function getCmsSlotBlocks(
         CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
     ): CmsSlotBlockCollectionTransfer {
@@ -90,11 +85,6 @@ class CmsSlotBlockRepository extends AbstractRepository implements CmsSlotBlockR
             ->mapCmsBlockEntitiesToTransfers($cmsBlockEntities);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsBlockCriteriaTransfer $cmsBlockCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\CmsBlockCollectionTransfer
-     */
     public function getPaginatedCmsBlocksWithSlotRelations(CmsBlockCriteriaTransfer $cmsBlockCriteriaTransfer): CmsBlockCollectionTransfer
     {
         $paginationTransfer = $cmsBlockCriteriaTransfer
@@ -167,12 +157,6 @@ class CmsSlotBlockRepository extends AbstractRepository implements CmsSlotBlockR
             ->toArray();
     }
 
-    /**
-     * @param \Orm\Zed\CmsBlock\Persistence\SpyCmsBlockQuery $cmsBlockQuery
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return \Propel\Runtime\Util\PropelModelPager
-     */
     protected function getPaginationFromQuery(
         SpyCmsBlockQuery $cmsBlockQuery,
         PaginationTransfer $paginationTransfer
@@ -197,11 +181,6 @@ class CmsSlotBlockRepository extends AbstractRepository implements CmsSlotBlockR
             ->toArray();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FilterTransfer $filterTransfer
-     *
-     * @return \Generated\Shared\Transfer\FilterTransfer
-     */
     protected function setFilterTransferDefaultValues(FilterTransfer $filterTransfer): FilterTransfer
     {
         if (!$filterTransfer->getOrderBy()) {

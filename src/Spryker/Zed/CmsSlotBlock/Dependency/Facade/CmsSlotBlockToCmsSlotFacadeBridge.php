@@ -24,11 +24,6 @@ class CmsSlotBlockToCmsSlotFacadeBridge implements CmsSlotBlockToCmsSlotFacadeIn
         $this->cmsSlotFacade = $cmsSlotFacade;
     }
 
-    /**
-     * @param int $idCmsSlot
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTransfer
-     */
     public function getCmsSlotById(int $idCmsSlot): CmsSlotTransfer
     {
         return $this->cmsSlotFacade->getCmsSlotById($idCmsSlot);

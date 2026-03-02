@@ -15,11 +15,6 @@ use Generated\Shared\Transfer\FilterTransfer;
 
 interface CmsSlotBlockRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer
-     */
     public function getCmsSlotBlocks(
         CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
     ): CmsSlotBlockCollectionTransfer;
@@ -33,10 +28,5 @@ interface CmsSlotBlockRepositoryInterface
      */
     public function getCmsBlocksWithSlotRelations(FilterTransfer $filterTransfer): array;
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsBlockCriteriaTransfer $cmsBlockCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\CmsBlockCollectionTransfer
-     */
     public function getPaginatedCmsBlocksWithSlotRelations(CmsBlockCriteriaTransfer $cmsBlockCriteriaTransfer): CmsBlockCollectionTransfer;
 }

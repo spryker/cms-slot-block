@@ -16,9 +16,6 @@ use Spryker\Client\Kernel\AbstractFactory;
  */
 class CmsSlotBlockFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\CmsSlotBlock\Resolver\CmsSlotBlockVisibilityResolverInterface
-     */
     public function createCmsSlotBlockVisibilityResolver(): CmsSlotBlockVisibilityResolverInterface
     {
         return new CmsSlotBlockVisibilityResolver(

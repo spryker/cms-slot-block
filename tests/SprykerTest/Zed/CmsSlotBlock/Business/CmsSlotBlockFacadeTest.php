@@ -41,9 +41,6 @@ class CmsSlotBlockFacadeTest extends Unit
      */
     protected $cmsSlotBlockRepository;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -51,9 +48,6 @@ class CmsSlotBlockFacadeTest extends Unit
         $this->cmsSlotBlockRepository = new CmsSlotBlockRepository();
     }
 
-    /**
-     * @return void
-     */
     public function testCreateCmsSlotBlockRelationsAddsNewRelations(): void
     {
         // Arrange
@@ -104,9 +98,6 @@ class CmsSlotBlockFacadeTest extends Unit
         $this->assertEquals($cmsSlotBlockTransfer2, $cmsSlotBlockTransferFromDb2);
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteCmsSlotBlockRelationsByCriteriaRemovesRelations(): void
     {
         // Arrange
@@ -129,9 +120,6 @@ class CmsSlotBlockFacadeTest extends Unit
         $this->assertCount(0, $cmsSlotBlocks);
     }
 
-    /**
-     * @return void
-     */
     public function testGetCmsSlotBlockCollectionReturnsCorrectData(): void
     {
         // Arrange
@@ -156,9 +144,6 @@ class CmsSlotBlockFacadeTest extends Unit
         $this->assertEquals($cmsSlotBlockTransfer2->toArray(), $cmsSlotBlocks[1]->toArray());
     }
 
-    /**
-     * @return void
-     */
     public function testGetCmsSlotBlockCollectionReturnsEmptyCollectionIfRelationsDoNotExist(): void
     {
         // Arrange
@@ -175,9 +160,6 @@ class CmsSlotBlockFacadeTest extends Unit
         $this->assertCount(0, $cmsSlotBlocks);
     }
 
-    /**
-     * @return void
-     */
     public function testGetTemplateConditionsByPathIsSuccessful(): void
     {
         //Act
@@ -189,9 +171,6 @@ class CmsSlotBlockFacadeTest extends Unit
         $this->assertEquals(['test'], $templateConditionsAssignment);
     }
 
-    /**
-     * @return void
-     */
     public function testGetTemplateConditionsByPathIsFailed(): void
     {
         //Act
@@ -203,9 +182,6 @@ class CmsSlotBlockFacadeTest extends Unit
         $this->assertEmpty($templateConditionsAssignment);
     }
 
-    /**
-     * @return void
-     */
     public function testGetCmsBlocksWithSlotRelationsReturnsDataWithCorrectLimit(): void
     {
         // Arrange
@@ -220,9 +196,6 @@ class CmsSlotBlockFacadeTest extends Unit
         $this->assertCount($cmsBlockCountBefore + 1, $cmsBlockTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testGetCmsBlocksWithSlotRelationsReturnsDataWithCorrectOffset(): void
     {
         // Arrange
@@ -237,9 +210,6 @@ class CmsSlotBlockFacadeTest extends Unit
         $this->assertCount(1, $cmsBlockTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testGetCmsBlocksWithSlotRelationsReturnsDataWithOrderAsc(): void
     {
         // Arrange
@@ -256,9 +226,6 @@ class CmsSlotBlockFacadeTest extends Unit
         $this->assertEquals($cmsBlockTransfer->getIdCmsBlock(), $lastCmsBlockTransfer->getIdCmsBlock());
     }
 
-    /**
-     * @return void
-     */
     public function testGetCmsBlocksWithSlotRelationsReturnsDataWithOrderDesc(): void
     {
         // Arrange
@@ -274,9 +241,6 @@ class CmsSlotBlockFacadeTest extends Unit
         $this->assertEquals($cmsBlockTransfer->getIdCmsBlock(), $cmsBlockTransfers[0]->getIdCmsBlock());
     }
 
-    /**
-     * @return void
-     */
     public function testGetPaginatedCmsBlockWithSlotRelationsReturnsDataWithEmptySearchName(): void
     {
         // Arrange
@@ -298,9 +262,6 @@ class CmsSlotBlockFacadeTest extends Unit
         $this->assertCount($cmsBlockCountAfter, $cmsBlockCollectionTransfer->getCmsBlocks());
     }
 
-    /**
-     * @return void
-     */
     public function testGetPaginatedCmsBlockWithSlotRelationsReturnsCmsBlockBasedOnSearchData(): void
     {
         // Arrange
@@ -325,9 +286,6 @@ class CmsSlotBlockFacadeTest extends Unit
         $this->assertCount($cmsBlockWithNamesCount, $cmsBlockCollectionTransfer->getCmsBlocks());
     }
 
-    /**
-     * @return void
-     */
     public function testGetPaginatedCmsBlockWithSlotRelationsReturnsPaginatedData(): void
     {
         // Arrange
@@ -378,9 +336,6 @@ class CmsSlotBlockFacadeTest extends Unit
         $this->assertEmpty($cmsBlockCollectionTransfer->getCmsBlocks());
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlock\Business\CmsSlotBlockFacadeInterface
-     */
     protected function createCmsSlotBlockFacade(): CmsSlotBlockFacadeInterface
     {
         $factory = new CmsSlotBlockBusinessFactory();

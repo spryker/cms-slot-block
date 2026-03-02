@@ -15,11 +15,6 @@ use Orm\Zed\CmsSlotBlock\Persistence\SpyCmsSlotBlockQuery;
 
 class CmsSlotBlockHelper extends Module
 {
-    /**
-     * @param array $override
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotBlockTransfer
-     */
     public function haveCmsSlotBlockInDb(array $override = []): CmsSlotBlockTransfer
     {
         $data = [
@@ -52,9 +47,6 @@ class CmsSlotBlockHelper extends Module
         return $cmsSlotBlockTransfer;
     }
 
-    /**
-     * @return void
-     */
     public function ensureCmsSlotBlockTableIsEmpty(): void
     {
         SpyCmsSlotBlockQuery::create()->deleteAll();

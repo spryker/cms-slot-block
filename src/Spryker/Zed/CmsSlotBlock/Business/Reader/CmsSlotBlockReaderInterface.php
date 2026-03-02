@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\CmsSlotBlockCriteriaTransfer;
 
 interface CmsSlotBlockReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer
-     */
     public function getCmsSlotBlockCollection(
         CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
     ): CmsSlotBlockCollectionTransfer;

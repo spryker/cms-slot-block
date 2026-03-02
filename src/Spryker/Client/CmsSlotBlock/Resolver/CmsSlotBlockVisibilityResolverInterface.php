@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\CmsSlotParamsTransfer;
 
 interface CmsSlotBlockVisibilityResolverInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockTransfer $cmsSlotBlockTransfer
-     * @param \Generated\Shared\Transfer\CmsSlotParamsTransfer $cmsSlotParamsTransfer
-     *
-     * @return bool
-     */
     public function isCmsBlockVisibleInSlot(
         CmsSlotBlockTransfer $cmsSlotBlockTransfer,
         CmsSlotParamsTransfer $cmsSlotParamsTransfer

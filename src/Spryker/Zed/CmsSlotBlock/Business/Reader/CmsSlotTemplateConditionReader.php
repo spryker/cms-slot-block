@@ -16,9 +16,6 @@ class CmsSlotTemplateConditionReader implements CmsSlotTemplateConditionReaderIn
      */
     protected $cmsSlotBlockConfig;
 
-    /**
-     * @param \Spryker\Zed\CmsSlotBlock\CmsSlotBlockConfig $cmsSlotBlockConfig
-     */
     public function __construct(CmsSlotBlockConfig $cmsSlotBlockConfig)
     {
         $this->cmsSlotBlockConfig = $cmsSlotBlockConfig;

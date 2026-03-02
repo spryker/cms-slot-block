@@ -19,10 +19,5 @@ interface CmsSlotBlockEntityManagerInterface
      */
     public function createCmsSlotBlocks(array $cmsSlotBlockTransfers): CmsSlotBlockCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
-     *
-     * @return void
-     */
     public function deleteCmsSlotBlocksByCriteria(CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer): void;
 }

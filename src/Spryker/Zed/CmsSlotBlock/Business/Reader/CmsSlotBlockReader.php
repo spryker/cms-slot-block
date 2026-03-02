@@ -18,19 +18,11 @@ class CmsSlotBlockReader implements CmsSlotBlockReaderInterface
      */
     protected $cmsSlotBlockRepository;
 
-    /**
-     * @param \Spryker\Zed\CmsSlotBlock\Persistence\CmsSlotBlockRepositoryInterface $cmsSlotBlockRepository
-     */
     public function __construct(CmsSlotBlockRepositoryInterface $cmsSlotBlockRepository)
     {
         $this->cmsSlotBlockRepository = $cmsSlotBlockRepository;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer
-     */
     public function getCmsSlotBlockCollection(
         CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
     ): CmsSlotBlockCollectionTransfer {

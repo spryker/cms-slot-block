@@ -35,12 +35,6 @@ class CmsSlotBlockVisibilityResolver implements CmsSlotBlockVisibilityResolverIn
         $this->cmsSlotBlockConfig = $cmsSlotBlockConfig;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockTransfer $cmsSlotBlockTransfer
-     * @param \Generated\Shared\Transfer\CmsSlotParamsTransfer $cmsSlotParamsTransfer
-     *
-     * @return bool
-     */
     public function isCmsBlockVisibleInSlot(
         CmsSlotBlockTransfer $cmsSlotBlockTransfer,
         CmsSlotParamsTransfer $cmsSlotParamsTransfer

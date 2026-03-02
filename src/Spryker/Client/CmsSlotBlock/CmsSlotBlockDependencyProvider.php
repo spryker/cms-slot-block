@@ -20,11 +20,6 @@ class CmsSlotBlockDependencyProvider extends AbstractDependencyProvider
      */
     public const PLUGINS_CMS_SLOT_BLOCK_VISIBILITY_RESOLVER = 'PLUGINS_CMS_SLOT_BLOCK_VISIBILITY_RESOLVER';
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     public function provideServiceLayerDependencies(Container $container): Container
     {
         $container = $this->addCmsSlotBlockVisibilityResolverPlugins($container);
@@ -32,11 +27,6 @@ class CmsSlotBlockDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addCmsSlotBlockVisibilityResolverPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CMS_SLOT_BLOCK_VISIBILITY_RESOLVER, function () {

@@ -40,12 +40,6 @@ class CmsSlotBlockRelationsWriter implements CmsSlotBlockRelationsWriterInterfac
      */
     protected $cmsSlotBlockValidator;
 
-    /**
-     * @param \Spryker\Zed\CmsSlotBlock\Persistence\CmsSlotBlockEntityManagerInterface $cmsSlotBlockEntityManager
-     * @param \Spryker\Zed\CmsSlotBlock\Persistence\CmsSlotBlockRepositoryInterface $cmsSlotBlockRepository
-     * @param \Spryker\Zed\CmsSlotBlock\Dependency\Facade\CmsSlotBlockToEventFacadeInterface $eventFacade
-     * @param \Spryker\Zed\CmsSlotBlock\Business\Validator\CmsSlotBlockValidatorInterface $cmsSlotBlockValidator
-     */
     public function __construct(
         CmsSlotBlockEntityManagerInterface $cmsSlotBlockEntityManager,
         CmsSlotBlockRepositoryInterface $cmsSlotBlockRepository,
@@ -58,11 +52,6 @@ class CmsSlotBlockRelationsWriter implements CmsSlotBlockRelationsWriterInterfac
         $this->cmsSlotBlockValidator = $cmsSlotBlockValidator;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer $cmsSlotBlockCollectionTransfer
-     *
-     * @return void
-     */
     public function createCmsSlotBlockRelations(CmsSlotBlockCollectionTransfer $cmsSlotBlockCollectionTransfer): void
     {
         $cmsSlotBlockTransfers = $cmsSlotBlockCollectionTransfer->getCmsSlotBlocks()->getArrayCopy();
@@ -93,11 +82,6 @@ class CmsSlotBlockRelationsWriter implements CmsSlotBlockRelationsWriterInterfac
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
-     *
-     * @return void
-     */
     public function deleteCmsSlotBlockRelationsByCriteria(CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer): void
     {
         $cmsSlotBlockCollectionTransfer = $this->cmsSlotBlockRepository
@@ -106,11 +90,6 @@ class CmsSlotBlockRelationsWriter implements CmsSlotBlockRelationsWriterInterfac
         $this->cmsSlotBlockEntityManager->deleteCmsSlotBlocksByCriteria($cmsSlotBlockCriteriaTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer $cmsSlotBlockCollectionTransfer
-     *
-     * @return void
-     */
     protected function triggerCmsSlotBlockPublishEvents(
         CmsSlotBlockCollectionTransfer $cmsSlotBlockCollectionTransfer
     ): void {

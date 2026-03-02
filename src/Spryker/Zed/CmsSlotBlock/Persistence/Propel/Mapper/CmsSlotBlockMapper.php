@@ -25,20 +25,11 @@ class CmsSlotBlockMapper implements CmsSlotBlockMapperInterface
      */
     protected $utilEncodingService;
 
-    /**
-     * @param \Spryker\Zed\CmsSlotBlock\Dependency\Service\CmsSlotBlockToUtilEncodingServiceInterface $utilEncodingService
-     */
     public function __construct(CmsSlotBlockToUtilEncodingServiceInterface $utilEncodingService)
     {
         $this->utilEncodingService = $utilEncodingService;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockTransfer $cmsSlotBlockTransfer
-     * @param \Orm\Zed\CmsSlotBlock\Persistence\SpyCmsSlotBlock $cmsSlotBlockEntity
-     *
-     * @return \Orm\Zed\CmsSlotBlock\Persistence\SpyCmsSlotBlock
-     */
     public function mapCmsSlotBlockTransferToEntity(
         CmsSlotBlockTransfer $cmsSlotBlockTransfer,
         SpyCmsSlotBlock $cmsSlotBlockEntity
@@ -59,12 +50,6 @@ class CmsSlotBlockMapper implements CmsSlotBlockMapperInterface
         return $cmsSlotBlockEntity;
     }
 
-    /**
-     * @param \Propel\Runtime\Collection\Collection $cmsSlotBlockEntities
-     * @param \Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer $cmsSlotBlockCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer
-     */
     public function mapCmsSlotBlockEntityCollectionToTransferCollection(
         Collection $cmsSlotBlockEntities,
         CmsSlotBlockCollectionTransfer $cmsSlotBlockCollectionTransfer
@@ -93,12 +78,6 @@ class CmsSlotBlockMapper implements CmsSlotBlockMapperInterface
         return $cmsBlockTransfers;
     }
 
-    /**
-     * @param \Propel\Runtime\Collection\Collection $cmsBlockEntities
-     * @param \Generated\Shared\Transfer\CmsBlockCollectionTransfer $cmsBlockCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\CmsBlockCollectionTransfer
-     */
     public function mapCmsBlockEntitiesToCmsBlockCollectionTransfer(
         Collection $cmsBlockEntities,
         CmsBlockCollectionTransfer $cmsBlockCollectionTransfer
@@ -111,12 +90,6 @@ class CmsSlotBlockMapper implements CmsSlotBlockMapperInterface
         return $cmsBlockCollectionTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\CmsBlock\Persistence\SpyCmsBlock $cmsBlockEntity
-     * @param \Generated\Shared\Transfer\CmsBlockTransfer $cmsBlockTransfer
-     *
-     * @return \Generated\Shared\Transfer\CmsBlockTransfer
-     */
     protected function mapCmsBlockEntityToTransfer(
         SpyCmsBlock $cmsBlockEntity,
         CmsBlockTransfer $cmsBlockTransfer
@@ -132,12 +105,6 @@ class CmsSlotBlockMapper implements CmsSlotBlockMapperInterface
         return $cmsBlockTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\CmsSlotBlock\Persistence\SpyCmsSlotBlock $cmsSlotBlockEntity
-     * @param \Generated\Shared\Transfer\CmsSlotBlockTransfer $cmsSlotBlockTransfer
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotBlockTransfer
-     */
     protected function mapCmsSlotBlockEntityToTransfer(
         SpyCmsSlotBlock $cmsSlotBlockEntity,
         CmsSlotBlockTransfer $cmsSlotBlockTransfer

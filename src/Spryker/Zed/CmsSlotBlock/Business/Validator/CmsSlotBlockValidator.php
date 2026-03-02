@@ -25,9 +25,6 @@ class CmsSlotBlockValidator implements CmsSlotBlockValidatorInterface
      */
     protected $validCmsSlotBuffer = [];
 
-    /**
-     * @param \Spryker\Zed\CmsSlotBlock\Dependency\Facade\CmsSlotBlockToCmsSlotFacadeInterface $cmsSlotFacade
-     */
     public function __construct(CmsSlotBlockToCmsSlotFacadeInterface $cmsSlotFacade)
     {
         $this->cmsSlotFacade = $cmsSlotFacade;
@@ -57,11 +54,6 @@ class CmsSlotBlockValidator implements CmsSlotBlockValidatorInterface
         return $validationResponseTransfer;
     }
 
-    /**
-     * @param int $idCmsSlot
-     *
-     * @return bool
-     */
     protected function isValidCmsSlot(int $idCmsSlot): bool
     {
         if (isset($this->validCmsSlotBuffer[$idCmsSlot])) {
@@ -83,11 +75,6 @@ class CmsSlotBlockValidator implements CmsSlotBlockValidatorInterface
         return $isValidCmsSlot;
     }
 
-    /**
-     * @param int $idCmsSlot
-     *
-     * @return \Generated\Shared\Transfer\MessageTransfer
-     */
     protected function createMessageTransfer(int $idCmsSlot): MessageTransfer
     {
         return (new MessageTransfer())

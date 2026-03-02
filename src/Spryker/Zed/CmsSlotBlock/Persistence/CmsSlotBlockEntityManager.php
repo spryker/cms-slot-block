@@ -52,11 +52,6 @@ class CmsSlotBlockEntityManager extends AbstractEntityManager implements CmsSlot
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
-     *
-     * @return void
-     */
     public function deleteCmsSlotBlocksByCriteria(CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer): void
     {
         $cmsSlotBlockCriteriaTransfer->requireIdCmsSlotTemplate()
