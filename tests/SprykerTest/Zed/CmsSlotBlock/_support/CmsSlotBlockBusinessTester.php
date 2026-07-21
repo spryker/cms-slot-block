@@ -55,14 +55,13 @@ class CmsSlotBlockBusinessTester extends Actor
         $storeTransfer = $this->haveStore([StoreTransfer::NAME => static::STORE_NAME]);
         $cmsBlockTransfers = [];
 
-        $cmsBlockData = [
-            CmsBlockTransfer::STORE_RELATION => [StoreRelationTransfer::ID_STORES => [$storeTransfer->getIdStore()]],
-        ];
-
         for ($i = 0; $i < $blocksNumber; $i++) {
-            if ($blockNamePattern !== '') {
-                $cmsBlockData[CmsBlockTransfer::NAME] = $blockNamePattern . $i;
-            }
+            $uniqueToken = 'csb-fixture-' . uniqid('', true);
+            $cmsBlockData = [
+                CmsBlockTransfer::STORE_RELATION => [StoreRelationTransfer::ID_STORES => [$storeTransfer->getIdStore()]],
+                CmsBlockTransfer::NAME => $blockNamePattern . $uniqueToken,
+                CmsBlockTransfer::KEY => $uniqueToken,
+            ];
 
             $cmsBlockTransfers[] = $this->haveCmsBlock($cmsBlockData);
         }
